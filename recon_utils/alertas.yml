@@ -1,0 +1,13 @@
+# A quién avisar y por qué canal cuando una validación falla.
+# log: archivo alertas.log. sns: correo a los suscritos al topic SNS.
+# SNS se envía de verdad solo si existe la variable de entorno indicada;
+# si no existe, la alerta queda registrada como SIMULADO (así la demo corre sin cuenta AWS).
+
+canales:
+  sns: {variable: SNS_TOPIC_ARN}
+
+destinos:
+  bronze.ventas:       {responsable: equipo-ingesta,   canales: [log, sns]}
+  silver.ventas:       {responsable: equipo-analytics, canales: [log, sns]}
+  gold.ventas_diarias: {responsable: equipo-analytics, canales: [log, sns]}
+  por_defecto:         {responsable: equipo-datos,     canales: [log, sns]}

@@ -1,0 +1,21 @@
+{
+  "tabla": "bronze.ventas",
+  "version": 1,
+  "llave_primaria": ["id_venta"],
+  "margen_minimo_pct": 90,
+  "columnas": {
+    "id_venta": {"tipo": "int", "nulos_max_pct": 0},
+    "id_tienda": {"tipo": "string", "nulos_max_pct": 0},
+    "producto": {"tipo": "string"},
+    "monto": {"tipo": "double", "nulos_max_pct": 50},
+    "fecha_venta": {"tipo": "string", "nulos_max_pct": 0},
+    "fecha_carga": {"tipo": "timestamp", "nulos_max_pct": 0}
+  },
+  "reglas_conteo": {
+    "tipo": "uno_a_uno",
+    "minimo_filas": 1,
+    "tolerancia_pct": 0,
+    "minimo_pct_historial": 50,
+    "revisar_fecha_carga": true
+  }
+}

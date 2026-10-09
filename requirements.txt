@@ -1,0 +1,6 @@
+pandas
+pyarrow
+pyiceberg[sql-sqlite,pyarrow]
+duckdb
+dbt-duckdb
+pyyaml

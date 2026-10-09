@@ -1,0 +1,17 @@
+name: cuadratura
+version: "1.0"
+profile: cuadratura
+model-paths: ["models"]
+macro-paths: ["macros"]
+
+models:
+  cuadratura:
+    bronze:
+      +schema: bronze
+      +materialized: view
+    silver:
+      +schema: silver
+      +materialized: table
+    gold:
+      +schema: gold
+      +materialized: table

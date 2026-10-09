@@ -1,0 +1,20 @@
+{
+  "tabla": "gold.ventas_diarias",
+  "version": 1,
+  "llave_primaria": ["id_tienda", "fecha_venta"],
+  "margen_minimo_pct": 90,
+  "columnas": {
+    "id_tienda": {"tipo": "string", "nulos_max_pct": 0},
+    "fecha_venta": {"tipo": "string", "nulos_max_pct": 0},
+    "cantidad_ventas": {"tipo": "int", "nulos_max_pct": 0},
+    "monto_total": {"tipo": "double", "nulos_max_pct": 0},
+    "fecha_carga": {"tipo": "timestamp", "nulos_max_pct": 0}
+  },
+  "reglas_conteo": {
+    "tipo": "agrega",
+    "minimo_filas": 1,
+    "tolerancia_pct": 0,
+    "revisar_fecha_carga": true,
+    "revisar_suma": true
+  }
+}
